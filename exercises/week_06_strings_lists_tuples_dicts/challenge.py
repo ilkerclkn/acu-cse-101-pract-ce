@@ -13,8 +13,11 @@ Keep names and parameters unchanged so the automated tests can call them.
 #           count_vowels("Python") returns 1
 #           count_vowels("") returns 0
 def count_vowels(word):
-    # TODO: Return vowel count
-    pass
+    count = 0
+    for ch in word.lower():
+        if ch in "aeiou":
+            count += 1
+    return count
 
 
 # Challenge 2 (Lists): Filter Positive Numbers
@@ -24,8 +27,11 @@ def count_vowels(word):
 #           filter_positives([-1, -2]) returns []
 #           filter_positives([1, 2, 3]) returns [1, 2, 3]
 def filter_positives(numbers):
-    # TODO: Return new list with only positive numbers
-    pass
+    result = []
+    for n in numbers:
+        if n > 0:
+            result.append(n)
+    return result
 
 
 # Challenge 3 (Tuples): Minimum and Maximum
@@ -35,8 +41,7 @@ def filter_positives(numbers):
 #           min_max([42]) returns (42, 42)
 #           min_max([-5, 0, 10]) returns (-5, 10)
 def min_max(numbers):
-    # TODO: Return (smallest, largest) as a tuple
-    pass
+    return (min(numbers), max(numbers))
 
 
 # Challenge 4 (Dictionaries): Character Frequency Count
@@ -45,5 +50,10 @@ def min_max(numbers):
 #           count_characters("hello") returns {"h": 1, "e": 1, "l": 2, "o": 1}
 #           count_characters("") returns {}
 def count_characters(text):
-    # TODO: Return character count dictionary
-    pass
+    counts = {}
+    for ch in text:
+        if ch in counts:
+            counts[ch] += 1
+        else:
+            counts[ch] = 1
+    return counts
